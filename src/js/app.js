@@ -48,11 +48,11 @@ function render(variables = {}) {
               ? "position-right"
               : variables.socialMediaPosition
           }"
-            <li><a href="https://twitter.com/${
+            <li><a href="https://twitter.com/"${
               variables.twitter == null ? "4geeksacademy" : variables.twitter
-            }><i class="fab fa-twitter">"</i></a></li>
+            }><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/"${
-              variables.github == null ? "4geeksacademy" : variables.github
+              variables.github == "Kei3108" ? "4geeksacademy" : variables.github
             }><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/"${
               variables.linkedin == null ? "4geeksacademy" : variables.likendin
