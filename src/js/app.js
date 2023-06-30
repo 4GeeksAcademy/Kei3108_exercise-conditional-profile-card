@@ -32,15 +32,36 @@ function render(variables = {}) {
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <img src="${
+            variables.avatarURL == null
+              ? "https://m1.paperblog.com/i/460/4600328/4-fotos-perritos-tiernos-bonitos-peludos-pant-L-1TjR9F.jpeg"
+              : variables.avatarURL
+          }" class="photo" />
+          <h1>${variables.name == null ? "Keilyn" : variables.name} 
+          ${variables.lastname == null ? "Mora" : variables.lastname}  
+          </h1>
+          <h2>${variables.role == null ? "Web Developer" : variables.role}</h2>
+          <h3>${variables.city == null ? "Miami" : variables.city} 
+          ${variables.country == null ? "USA" : variables.country}</h3>
+          <ul class= "${
+            variables.socialMediaPosition != "position-left"
+              ? "position-right"
+              : variables.socialMediaPosition
+          }"
+            <li><a href="https://twitter.com/${
+              variables.twitter == null ? "4geeksacademy" : variables.twitter
+            }><i class="fab fa-twitter">"</i></a></li>
+            <li><a href="https://github.com/"${
+              variables.github == null ? "4geeksacademy" : variables.github
+            }><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/"${
+              variables.linkedin == null ? "4geeksacademy" : variables.likendin
+            }><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/"${
+              variables.instagram == null
+                ? "4geeksacademy"
+                : variables.instagram
+            }><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -54,14 +75,16 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://concepto.de/wp-content/uploads/2014/08/universo-e1551279332781.jpg",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://m1.paperblog.com/i/460/4600328/4-fotos-perritos-tiernos-bonitos-peludos-pant-L-1TjR9F.jpeg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: "Kei3108",
     linkedin: null,
     instagram: null,
     name: null,
